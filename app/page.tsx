@@ -140,12 +140,11 @@ export default function Home() {
 
       {/* Nav */}
       <nav className="flex items-center px-6 py-6 max-w-3xl mx-auto w-full">
-        <span
-          className="text-xl tracking-tight"
-          style={{ fontFamily: "var(--font-display)", color: "#1C1A17" }}
-        >
-          townn
-        </span>
+        <img
+          src="/brand/lockups/townn-horizontal-mint.svg"
+          alt="Townn"
+          style={{ height: 28 }}
+        />
       </nav>
 
       {/* Hero — text centered */}
