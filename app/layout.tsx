@@ -20,6 +20,9 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Townn — Your neighborhood, in real life",
   description: "Townn helps neighbors meet each other in real life. Join the waitlist.",
+  icons: {
+    icon: "/brand/icon/townn-mark-mint.svg",
+  },
 };
 
 export default function RootLayout({
