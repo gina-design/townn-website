@@ -77,29 +77,60 @@ function SignupForm({ type }: { type: "waitlist" | "beta" }) {
   );
 }
 
+const tierStyles = {
+  active: {
+    rowBg: "#FFFFFF",
+    borderLeft: "3px solid #1ACABC",
+    pillBg: "#E7F5F3",
+    pillText: "#0E6E66",
+    titleColor: "#1C1A17",
+    titleStyle: "normal" as const,
+    bodyColor: "#6B5C4E",
+    watermark: "#E7F5F3",
+  },
+  mid: {
+    rowBg: "#FBF9F6",
+    borderLeft: "3px solid transparent",
+    pillBg: "#EAF0EE",
+    pillText: "#4D8074",
+    titleColor: "#8A7E78",
+    titleStyle: "normal" as const,
+    bodyColor: "#918379",
+    watermark: "#EAF0EE",
+  },
+  dim: {
+    rowBg: "#F7F3EE",
+    borderLeft: "3px solid transparent",
+    pillBg: "#EDE8E2",
+    pillText: "#8C7B6B",
+    titleColor: "#C5BAB0",
+    titleStyle: "italic" as const,
+    bodyColor: "#B8AFA7",
+    watermark: "#EDE8E2",
+  },
+};
+
 const pillars = [
   {
     phase: "Now",
     num: "01",
     title: "Gather",
     body: "Casual gatherings right in your neighborhood. An impromptu porch hangout, a backyard bonfire, a meetup at the local pub. The small moments that bring people back into each other's lives.",
-    active: true,
+    tier: "active" as const,
   },
   {
     phase: "Phase Two",
     num: "02",
     title: "Help",
     body: "Need a hand? Like to offer one? Townn connects neighbors who want to give and receive the kind of help that used to happen naturally in the village.",
-    active: false,
-    bg: "#FBF9F6",
+    tier: "mid" as const,
   },
   {
     phase: "The Horizon",
     num: "03",
     title: "Discuss",
     body: "On the horizon, Townn will connect neighbors to have the real conversations that usually separate us. Not to debate, but to understand.",
-    active: false,
-    bg: undefined,
+    tier: "dim" as const,
   },
 ];
 
@@ -176,14 +207,14 @@ export default function Home() {
 
       {/* Vision pillars */}
       <section style={{ borderTop: "0.5px solid #E2D9CF" }}>
-        {pillars.map(({ phase, num, title, body, active, bg }) => (
+        {pillars.map(({ phase, num, title, body, tier }) => (
           <div
             key={title}
             className="relative overflow-hidden px-6 py-12 sm:py-20"
             style={{
-              background: active ? "#FFFFFF" : (bg ?? "#F7F3EE"),
+              background: tierStyles[tier].rowBg,
               borderBottom: "0.5px solid #E2D9CF",
-              borderLeft: active ? "3px solid #1ACABC" : "3px solid transparent",
+              borderLeft: tierStyles[tier].borderLeft,
             }}
           >
             {/* Watermark number */}
@@ -193,7 +224,7 @@ export default function Home() {
                 fontFamily: "var(--font-display)",
                 fontSize: "clamp(6rem, 28vw, 22rem)",
                 lineHeight: 1,
-                color: active ? "#E7F5F3" : "#EDE8E2",
+                color: tierStyles[tier].watermark,
                 right: "-2rem",
                 bottom: "-2rem",
                 letterSpacing: "-0.04em",
@@ -208,8 +239,8 @@ export default function Home() {
                   className="text-sm font-medium px-4 py-1.5 rounded-full w-fit"
                   style={{
                     fontFamily: "var(--font-body)",
-                    background: active ? "#E7F5F3" : "#EDE8E2",
-                    color: active ? "#0E6E66" : "#8C7B6B",
+                    background: tierStyles[tier].pillBg,
+                    color: tierStyles[tier].pillText,
                   }}
                 >
                   {phase}
@@ -226,11 +257,11 @@ export default function Home() {
                 <h2
                   style={{
                     fontFamily: "var(--font-display)",
-                    color: active ? "#1C1A17" : "#C5BAB0",
+                    color: tierStyles[tier].titleColor,
                     lineHeight: 1.06,
                     letterSpacing: "-0.02em",
                     fontSize: "clamp(2rem, 8vw, 5rem)",
-                    fontStyle: active ? "normal" : "italic",
+                    fontStyle: tierStyles[tier].titleStyle,
                   }}
                 >
                   {title}
@@ -239,7 +270,7 @@ export default function Home() {
                   className="text-lg max-w-lg"
                   style={{
                     fontFamily: "var(--font-body)",
-                    color: active ? "#6B5C4E" : "#B8AFA7",
+                    color: tierStyles[tier].bodyColor,
                     lineHeight: 1.6,
                   }}
                 >
