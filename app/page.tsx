@@ -165,7 +165,7 @@ export default function Home() {
             </span>
           </h1>
           <p
-            className="text-xl max-w-lg"
+            className="text-xl max-w-2xl"
             style={{ fontFamily: "var(--font-body)", color: "#6B5C4E", lineHeight: 1.6 }}
           >
             Gather with neighbors, help each other out, and have the conversations that actually matter. Right where you live.
