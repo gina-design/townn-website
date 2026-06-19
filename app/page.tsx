@@ -141,9 +141,9 @@ export default function Home() {
       {/* Nav */}
       <nav className="flex items-center px-6 py-6 max-w-3xl mx-auto w-full">
         <img
-          src="/brand/lockups/townn-horizontal-mint.svg"
+          src="/brand/lockups/townn-horizontal-primary.svg"
           alt="Townn"
-          style={{ height: 28 }}
+          style={{ height: 42 }}
         />
       </nav>
 
