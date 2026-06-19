@@ -179,7 +179,7 @@ export default function Home() {
 
         <p className="text-base" style={{ fontFamily: "var(--font-body)", color: "#6B5C4E" }}>
           Want to help shape it?{" "}
-          <a href="#beta" className="underline underline-offset-2" style={{ color: "#1ACABC" }}>
+          <a href="#beta" className="underline underline-offset-2" style={{ color: "#0E6E66" }}>
             Sign up as a beta tester →
           </a>
         </p>
