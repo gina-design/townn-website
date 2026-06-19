@@ -91,6 +91,7 @@ const pillars = [
     title: "Help",
     body: "Need a hand? Like to offer one? Townn connects neighbors who want to give and receive the kind of help that used to happen naturally in the village.",
     active: false,
+    bg: "#FBF9F6",
   },
   {
     phase: "The Horizon",
@@ -98,6 +99,7 @@ const pillars = [
     title: "Discuss",
     body: "On the horizon, Townn will connect neighbors to have the real conversations that usually separate us. Not to debate, but to understand.",
     active: false,
+    bg: undefined,
   },
 ];
 
@@ -174,12 +176,12 @@ export default function Home() {
 
       {/* Vision pillars */}
       <section style={{ borderTop: "0.5px solid #E2D9CF" }}>
-        {pillars.map(({ phase, num, title, body, active }) => (
+        {pillars.map(({ phase, num, title, body, active, bg }) => (
           <div
             key={title}
             className="relative overflow-hidden px-6 py-12 sm:py-20"
             style={{
-              background: active ? "#FFFFFF" : "#F7F3EE",
+              background: active ? "#FFFFFF" : (bg ?? "#F7F3EE"),
               borderBottom: "0.5px solid #E2D9CF",
               borderLeft: active ? "3px solid #1ACABC" : "3px solid transparent",
             }}
@@ -203,7 +205,7 @@ export default function Home() {
             <div className="relative z-10 max-w-3xl mx-auto flex flex-col sm:flex-row sm:items-start gap-8">
               <div className="flex sm:flex-col gap-3 sm:gap-2 sm:w-36 shrink-0 pt-1">
                 <span
-                  className="text-xs font-medium px-3 py-1 rounded-full w-fit"
+                  className="text-sm font-medium px-4 py-1.5 rounded-full w-fit"
                   style={{
                     fontFamily: "var(--font-body)",
                     background: active ? "#E7F5F3" : "#EDE8E2",
@@ -213,7 +215,7 @@ export default function Home() {
                   {phase}
                 </span>
                 <span
-                  className="text-xs"
+                  className="text-sm"
                   style={{ fontFamily: "var(--font-body)", color: "#D3C7B9", marginTop: 2 }}
                 >
                   {num}
