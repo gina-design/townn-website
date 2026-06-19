@@ -62,7 +62,7 @@ function SignupForm({ type }: { type: "waitlist" | "beta" }) {
       <button
         type="submit"
         disabled={loading}
-        className="px-6 py-3 text-sm font-medium rounded-[8px] transition-colors whitespace-nowrap"
+        className="px-8 py-4 text-base font-medium rounded-[8px] transition-colors whitespace-nowrap"
         style={{
           background: "#1ACABC",
           color: "#FFFFFF",
@@ -134,8 +134,8 @@ export default function Home() {
             </span>
           </h1>
           <p
-            className="text-lg max-w-lg"
-            style={{ fontFamily: "var(--font-body)", color: "#8C7B6B", lineHeight: 1.6 }}
+            className="text-xl max-w-lg"
+            style={{ fontFamily: "var(--font-body)", color: "#6B5C4E", lineHeight: 1.6 }}
           >
             Gather with neighbors, help each other out, and have the conversations that actually matter. Right where you live.
           </p>
@@ -145,7 +145,7 @@ export default function Home() {
           <SignupForm type="waitlist" />
         </div>
 
-        <p className="text-sm" style={{ fontFamily: "var(--font-body)", color: "#8C7B6B" }}>
+        <p className="text-base" style={{ fontFamily: "var(--font-body)", color: "#6B5C4E" }}>
           Want to help shape it?{" "}
           <a href="#beta" className="underline underline-offset-2" style={{ color: "#1ACABC" }}>
             Sign up as a beta tester →
@@ -234,10 +234,10 @@ export default function Home() {
                   {title}
                 </h2>
                 <p
-                  className="text-base max-w-lg"
+                  className="text-lg max-w-lg"
                   style={{
                     fontFamily: "var(--font-body)",
-                    color: active ? "#8C7B6B" : "#B8AFA7",
+                    color: active ? "#6B5C4E" : "#B8AFA7",
                     lineHeight: 1.6,
                   }}
                 >
@@ -282,8 +282,8 @@ export default function Home() {
             Want to shape it?
           </h2>
           <p
-            className="text-base max-w-sm"
-            style={{ fontFamily: "var(--font-body)", color: "#8C7B6B", lineHeight: 1.6 }}
+            className="text-lg max-w-sm"
+            style={{ fontFamily: "var(--font-body)", color: "#6B5C4E", lineHeight: 1.6 }}
           >
             We're looking for a small group of neighbors to try Townn before it launches
             and tell us what feels right.
@@ -299,7 +299,7 @@ export default function Home() {
         className="mt-auto px-6 py-8 text-center text-xs"
         style={{
           fontFamily: "var(--font-body)",
-          color: "#8C7B6B",
+          color: "#6B5C4E",
           borderTop: "0.5px solid #E2D9CF",
         }}
       >
